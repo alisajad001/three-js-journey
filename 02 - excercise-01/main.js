@@ -54,6 +54,10 @@ controls.autoRotate = true;
 // Animate
 function animate() {
   requestAnimationFrame(animate);
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.render(scene, camera);
 
   controls.update();
